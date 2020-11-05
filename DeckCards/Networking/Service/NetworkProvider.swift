@@ -1,5 +1,5 @@
 //
-//  Router.swift
+//  NetworkProvider.swift
 //  DeckCards
 //
 //  Created by Leandro de Sousa on 05/11/20.
@@ -8,13 +8,14 @@
 
 import Foundation
 
-class Router<EndPoint: EndPointType>: NetworkRouter {
+class NetworkProvider<ApiBase: APIBase>: NetworkRouter {
     private var task: URLSessionTask?
     
-    func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion) {
+    func request(_ route: ApiBase, completion: @escaping NetworkRouterCompletion) {
         let session = URLSession.shared
         do {
             let request = try self.buildRequest(from: route)
+            NetworkLogger.log(request: request)
             task = session.dataTask(with: request, completionHandler: { (data, response, error) in
                 completion(data, response, error)
             })
@@ -24,11 +25,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         self.task?.resume()
     }
     
-    func cancel() {
-        self.task?.cancel()
-    }
-    
-    fileprivate func buildRequest(from route: EndPoint) throws -> URLRequest {
+    fileprivate func buildRequest(from route: ApiBase) throws -> URLRequest {
         var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path),
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                  timeoutInterval: 10.0)
@@ -50,7 +47,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         }
     }
     
-    fileprivate func configureParameters(bodyParameters: Parameters?, urlParameters: Parameters?, request: inout URLRequest) throws {
+    fileprivate func configureParameters(bodyParameters: Parameters? = nil, urlParameters: Parameters? = nil, request: inout URLRequest) throws {
         do {
             if let bodyParameters = bodyParameters {
                 try JSONParameterEncoder.encode(urlRequest: &request, with: bodyParameters)
@@ -71,4 +68,3 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         }
     }
 }
-

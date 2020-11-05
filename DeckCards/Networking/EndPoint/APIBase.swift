@@ -1,5 +1,5 @@
 //
-//  EndPointType.swift
+//  APIBase.swift
 //  DeckCards
 //
 //  Created by Leandro de Sousa on 05/11/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EndPointType {
+protocol APIBase {
     var baseURL: URL { get }
     var path: String { get }
     var httpMethod: HTTPMethod { get }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1245F762554834400B35AD3 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1245F752554834400B35AD3 /* DeckService.swift */; };
 		D1344D722553393E00B00C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344D712553393E00B00C7E /* AppDelegate.swift */; };
 		D1344D742553393E00B00C7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344D732553393E00B00C7E /* SceneDelegate.swift */; };
 		D1344D7B2553394000B00C7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1344D7A2553394000B00C7E /* Assets.xcassets */; };
@@ -33,15 +34,21 @@
 		D1D6C9962553BC7100AF4BD6 /* HighestValueViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D6C9942553BC7100AF4BD6 /* HighestValueViewCell.xib */; };
 		D1D6C9992553BD2900AF4BD6 /* CombinationsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9972553BD2900AF4BD6 /* CombinationsViewCell.swift */; };
 		D1D6C99A2553BD2900AF4BD6 /* CombinationsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D6C9982553BD2900AF4BD6 /* CombinationsViewCell.xib */; };
-		D1D6C9B02553C76900AF4BD6 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9AF2553C76900AF4BD6 /* EndPointType.swift */; };
+		D1D6C9B02553C76900AF4BD6 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9AF2553C76900AF4BD6 /* APIBase.swift */; };
 		D1D6C9B22553C7D200AF4BD6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9B12553C7D100AF4BD6 /* HTTPMethod.swift */; };
 		D1D6C9B42553C81400AF4BD6 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9B32553C81400AF4BD6 /* HTTPTask.swift */; };
 		D1D6C9B62553C8B000AF4BD6 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9B52553C8B000AF4BD6 /* ParameterEncoding.swift */; };
 		D1D6C9B82553CA5600AF4BD6 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9B72553CA5600AF4BD6 /* URLParameterEncoder.swift */; };
 		D1D6C9BA2553CBA600AF4BD6 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9B92553CBA600AF4BD6 /* JSONParameterEncoder.swift */; };
 		D1D6C9BC2553CC9000AF4BD6 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9BB2553CC9000AF4BD6 /* NetworkRouter.swift */; };
-		D1D6C9BE2553CD3300AF4BD6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9BD2553CD3300AF4BD6 /* Router.swift */; };
+		D1D6C9BE2553CD3300AF4BD6 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9BD2553CD3300AF4BD6 /* NetworkProvider.swift */; };
 		D1D6C9C02553D0C200AF4BD6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9BF2553D0C200AF4BD6 /* NetworkManager.swift */; };
+		D1D6C9C925545D3F00AF4BD6 /* DeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9C825545D3F00AF4BD6 /* DeckModel.swift */; };
+		D1D6C9CB25545D7400AF4BD6 /* CardsDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9CA25545D7400AF4BD6 /* CardsDetailsModel.swift */; };
+		D1D6C9CD25545D8A00AF4BD6 /* PilesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9CC25545D8A00AF4BD6 /* PilesModel.swift */; };
+		D1D6C9CF25545D9F00AF4BD6 /* PlayersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9CE25545D9F00AF4BD6 /* PlayersModel.swift */; };
+		D1D6C9D22554657200AF4BD6 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9D12554657200AF4BD6 /* NetworkLogger.swift */; };
+		D1D6C9D42554713F00AF4BD6 /* APIDeckBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9D32554713F00AF4BD6 /* APIDeckBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D1245F752554834400B35AD3 /* DeckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
 		D1344D6E2553393E00B00C7E /* DeckCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1344D712553393E00B00C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1344D732553393E00B00C7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,15 +102,21 @@
 		D1D6C9942553BC7100AF4BD6 /* HighestValueViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighestValueViewCell.xib; sourceTree = "<group>"; };
 		D1D6C9972553BD2900AF4BD6 /* CombinationsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationsViewCell.swift; sourceTree = "<group>"; };
 		D1D6C9982553BD2900AF4BD6 /* CombinationsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CombinationsViewCell.xib; sourceTree = "<group>"; };
-		D1D6C9AF2553C76900AF4BD6 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		D1D6C9AF2553C76900AF4BD6 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
 		D1D6C9B12553C7D100AF4BD6 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		D1D6C9B32553C81400AF4BD6 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 		D1D6C9B52553C8B000AF4BD6 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		D1D6C9B72553CA5600AF4BD6 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		D1D6C9B92553CBA600AF4BD6 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		D1D6C9BB2553CC9000AF4BD6 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
-		D1D6C9BD2553CD3300AF4BD6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D1D6C9BD2553CD3300AF4BD6 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		D1D6C9BF2553D0C200AF4BD6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D1D6C9C825545D3F00AF4BD6 /* DeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModel.swift; sourceTree = "<group>"; };
+		D1D6C9CA25545D7400AF4BD6 /* CardsDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDetailsModel.swift; sourceTree = "<group>"; };
+		D1D6C9CC25545D8A00AF4BD6 /* PilesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilesModel.swift; sourceTree = "<group>"; };
+		D1D6C9CE25545D9F00AF4BD6 /* PlayersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersModel.swift; sourceTree = "<group>"; };
+		D1D6C9D12554657200AF4BD6 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		D1D6C9D32554713F00AF4BD6 /* APIDeckBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDeckBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +167,7 @@
 		D1344D702553393E00B00C7E /* DeckCards */ = {
 			isa = PBXGroup;
 			children = (
+				D1D6C9C625545D2600AF4BD6 /* Model */,
 				D1D6C9A92553C71F00AF4BD6 /* Networking */,
 				D1D6C9A82553C6CF00AF4BD6 /* Application */,
 				D1D6C98A2553B97700AF4BD6 /* DeckInfo */,
@@ -340,6 +355,7 @@
 		D1D6C9A92553C71F00AF4BD6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				D1D6C9C12553D4CB00AF4BD6 /* APIDeckBuilder */,
 				D1D6C9AD2553C73A00AF4BD6 /* Encoding */,
 				D1D6C9AC2553C73400AF4BD6 /* Service */,
 				D1D6C9AB2553C73000AF4BD6 /* Manager */,
@@ -351,7 +367,7 @@
 		D1D6C9AA2553C72900AF4BD6 /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
-				D1D6C9AF2553C76900AF4BD6 /* EndPointType.swift */,
+				D1D6C9AF2553C76900AF4BD6 /* APIBase.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -367,10 +383,12 @@
 		D1D6C9AC2553C73400AF4BD6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				D1D6C9D02554623100AF4BD6 /* Protocols */,
 				D1D6C9B12553C7D100AF4BD6 /* HTTPMethod.swift */,
 				D1D6C9B32553C81400AF4BD6 /* HTTPTask.swift */,
-				D1D6C9BB2553CC9000AF4BD6 /* NetworkRouter.swift */,
-				D1D6C9BD2553CD3300AF4BD6 /* Router.swift */,
+				D1D6C9BD2553CD3300AF4BD6 /* NetworkProvider.swift */,
+				D1D6C9D12554657200AF4BD6 /* NetworkLogger.swift */,
+				D1245F752554834400B35AD3 /* DeckService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -383,6 +401,33 @@
 				D1D6C9B92553CBA600AF4BD6 /* JSONParameterEncoder.swift */,
 			);
 			path = Encoding;
+			sourceTree = "<group>";
+		};
+		D1D6C9C12553D4CB00AF4BD6 /* APIDeckBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6C9D32554713F00AF4BD6 /* APIDeckBuilder.swift */,
+			);
+			path = APIDeckBuilder;
+			sourceTree = "<group>";
+		};
+		D1D6C9C625545D2600AF4BD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6C9C825545D3F00AF4BD6 /* DeckModel.swift */,
+				D1D6C9CA25545D7400AF4BD6 /* CardsDetailsModel.swift */,
+				D1D6C9CC25545D8A00AF4BD6 /* PilesModel.swift */,
+				D1D6C9CE25545D9F00AF4BD6 /* PlayersModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1D6C9D02554623100AF4BD6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6C9BB2553CC9000AF4BD6 /* NetworkRouter.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,13 +575,19 @@
 				D1344DC52553AE7400B00C7E /* RotationCardViewCell.swift in Sources */,
 				D1D6C9C02553D0C200AF4BD6 /* NetworkManager.swift in Sources */,
 				D1344DB8255396C900B00C7E /* SubmitFooterView.swift in Sources */,
+				D1D6C9D22554657200AF4BD6 /* NetworkLogger.swift in Sources */,
+				D1D6C9D42554713F00AF4BD6 /* APIDeckBuilder.swift in Sources */,
 				D1D6C9912553BB3F00AF4BD6 /* CardsOrderViewCell.swift in Sources */,
-				D1D6C9B02553C76900AF4BD6 /* EndPointType.swift in Sources */,
+				D1D6C9B02553C76900AF4BD6 /* APIBase.swift in Sources */,
 				D1D6C9B62553C8B000AF4BD6 /* ParameterEncoding.swift in Sources */,
+				D1D6C9C925545D3F00AF4BD6 /* DeckModel.swift in Sources */,
 				D1D6C9B82553CA5600AF4BD6 /* URLParameterEncoder.swift in Sources */,
 				D1344D742553393E00B00C7E /* SceneDelegate.swift in Sources */,
-				D1D6C9BE2553CD3300AF4BD6 /* Router.swift in Sources */,
+				D1245F762554834400B35AD3 /* DeckService.swift in Sources */,
+				D1D6C9BE2553CD3300AF4BD6 /* NetworkProvider.swift in Sources */,
+				D1D6C9CD25545D8A00AF4BD6 /* PilesModel.swift in Sources */,
 				D1D6C9B22553C7D200AF4BD6 /* HTTPMethod.swift in Sources */,
+				D1D6C9CB25545D7400AF4BD6 /* CardsDetailsModel.swift in Sources */,
 				D1D6C9992553BD2900AF4BD6 /* CombinationsViewCell.swift in Sources */,
 				D1344DAE25535F0200B00C7E /* CardsView.swift in Sources */,
 				D1344DB32553602900B00C7E /* CardsViewCell.swift in Sources */,
@@ -545,6 +596,7 @@
 				D1344DA7255340AF00B00C7E /* DeckCardsViewController.swift in Sources */,
 				D1D6C9BC2553CC9000AF4BD6 /* NetworkRouter.swift in Sources */,
 				D1D6C98D2553B9EE00AF4BD6 /* DeckInfoViewController.swift in Sources */,
+				D1D6C9CF25545D9F00AF4BD6 /* PlayersModel.swift in Sources */,
 				D1D6C9BA2553CBA600AF4BD6 /* JSONParameterEncoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

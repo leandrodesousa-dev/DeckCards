@@ -16,6 +16,12 @@ class DeckCardsViewModel {
     
     private var cards: [TypeCell] = []
     private var cardsSegundo: [TypeCellSegundo] = []
+    var service: DeckService
+    
+    init() {
+        let service = DeckService()
+        self.service = service
+    }
     
     weak var coordinatorDelegate: DeckCardsViewModelCoordinatorDelegate?
     
@@ -35,6 +41,16 @@ class DeckCardsViewModel {
         cardsSegundo
     }
     
+    func testService() {
+        service.shuffleTheCards { (result) in
+            switch result {
+            case .success(let model):
+                print(model)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     
     
     func addCards() {

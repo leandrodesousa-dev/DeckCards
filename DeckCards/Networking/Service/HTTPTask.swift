@@ -13,7 +13,7 @@ public typealias HTTPHeaders = [String:String]
 enum HTTPTask {
     case request
     
-    case requestParameters(bodyParameters: Parameters?, urlParameters: Parameters?)
+    case requestParameters(bodyParameters: Parameters? = nil, urlParameters: Parameters? = nil)
     
     case requestParametersAndHeaders(bodyParameters: Parameters?, urlParameters: Parameters?, additionHeaders: HTTPHeaders?)
 }
