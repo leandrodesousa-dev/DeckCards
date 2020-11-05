@@ -15,16 +15,27 @@ protocol DeckCardsViewModelCoordinatorDelegate: AnyObject {
 class DeckCardsViewModel {
     
     private var cards: [TypeCell] = []
+    private var cardsSegundo: [TypeCellSegundo] = []
     
     weak var coordinatorDelegate: DeckCardsViewModelCoordinatorDelegate?
     
     var numberOfCards: Int {
-        return cards.count
+        cards.count
+    }
+    
+    var numberOfCardsSegundo: Int {
+        cardsSegundo.count
     }
     
     var cardsSemVazio: [TypeCell] {
-        return cards
+        cards
     }
+    
+    var cardsSemVazioSegundo: [TypeCellSegundo] {
+        cardsSegundo
+    }
+    
+    
     
     func addCards() {
         cards.append(.cards(name: "um"))
@@ -32,6 +43,15 @@ class DeckCardsViewModel {
         cards.append(.cards(name: "tres"))
         cards.append(.cards(name: "quatro"))
         cards.append(.rotationCard(name: "um"))
+    }
+    
+    func addCardsSegundo() {
+        cardsSegundo.append(.cards(name: "um"))
+        cardsSegundo.append(.cards(name: "dois"))
+        cardsSegundo.append(.cards(name: "tres"))
+        cardsSegundo.append(.cards(name: "quatro"))
+        cardsSegundo.append(.highestValue(name: "um"))
+        cardsSegundo.append(.combinations(name: "dois"))
     }
     
     func goToCardInfoScreen() {
@@ -43,4 +63,10 @@ class DeckCardsViewModel {
 enum TypeCell {
     case cards(name: String)
     case rotationCard(name: String)
+}
+
+enum TypeCellSegundo {
+    case cards(name: String)
+    case highestValue(name: String)
+    case combinations(name: String)
 }

@@ -25,6 +25,14 @@
 		D1344DC52553AE7400B00C7E /* RotationCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344DC32553AE7400B00C7E /* RotationCardViewCell.swift */; };
 		D1344DC62553AE7400B00C7E /* RotationCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1344DC42553AE7400B00C7E /* RotationCardViewCell.xib */; };
 		D1D6C9882553B68E00AF4BD6 /* DeckCardsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9872553B68E00AF4BD6 /* DeckCardsCoordinator.swift */; };
+		D1D6C98D2553B9EE00AF4BD6 /* DeckInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C98B2553B9EE00AF4BD6 /* DeckInfoViewController.swift */; };
+		D1D6C98E2553B9EE00AF4BD6 /* DeckInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D6C98C2553B9EE00AF4BD6 /* DeckInfoViewController.xib */; };
+		D1D6C9912553BB3F00AF4BD6 /* CardsOrderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C98F2553BB3F00AF4BD6 /* CardsOrderViewCell.swift */; };
+		D1D6C9922553BB3F00AF4BD6 /* CardsOrderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D6C9902553BB3F00AF4BD6 /* CardsOrderViewCell.xib */; };
+		D1D6C9952553BC7100AF4BD6 /* HighestValueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9932553BC7100AF4BD6 /* HighestValueViewCell.swift */; };
+		D1D6C9962553BC7100AF4BD6 /* HighestValueViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D6C9942553BC7100AF4BD6 /* HighestValueViewCell.xib */; };
+		D1D6C9992553BD2900AF4BD6 /* CombinationsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9972553BD2900AF4BD6 /* CombinationsViewCell.swift */; };
+		D1D6C99A2553BD2900AF4BD6 /* CombinationsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D6C9982553BD2900AF4BD6 /* CombinationsViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +77,14 @@
 		D1344DC32553AE7400B00C7E /* RotationCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationCardViewCell.swift; sourceTree = "<group>"; };
 		D1344DC42553AE7400B00C7E /* RotationCardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RotationCardViewCell.xib; sourceTree = "<group>"; };
 		D1D6C9872553B68E00AF4BD6 /* DeckCardsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardsCoordinator.swift; sourceTree = "<group>"; };
+		D1D6C98B2553B9EE00AF4BD6 /* DeckInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckInfoViewController.swift; sourceTree = "<group>"; };
+		D1D6C98C2553B9EE00AF4BD6 /* DeckInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeckInfoViewController.xib; sourceTree = "<group>"; };
+		D1D6C98F2553BB3F00AF4BD6 /* CardsOrderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOrderViewCell.swift; sourceTree = "<group>"; };
+		D1D6C9902553BB3F00AF4BD6 /* CardsOrderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsOrderViewCell.xib; sourceTree = "<group>"; };
+		D1D6C9932553BC7100AF4BD6 /* HighestValueViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighestValueViewCell.swift; sourceTree = "<group>"; };
+		D1D6C9942553BC7100AF4BD6 /* HighestValueViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighestValueViewCell.xib; sourceTree = "<group>"; };
+		D1D6C9972553BD2900AF4BD6 /* CombinationsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationsViewCell.swift; sourceTree = "<group>"; };
+		D1D6C9982553BD2900AF4BD6 /* CombinationsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CombinationsViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +135,8 @@
 		D1344D702553393E00B00C7E /* DeckCards */ = {
 			isa = PBXGroup;
 			children = (
-				D1344DBE2553A52D00B00C7E /* Coordinator */,
-				D1344DBD2553A52500B00C7E /* Model */,
-				D1344DBC2553A51800B00C7E /* View */,
-				D1344DBB2553A4FF00B00C7E /* ViewModel */,
+				D1D6C98A2553B97700AF4BD6 /* DeckInfo */,
+				D1D6C9892553B91600AF4BD6 /* NewDeck */,
 				D1344D712553393E00B00C7E /* AppDelegate.swift */,
 				D1344D732553393E00B00C7E /* SceneDelegate.swift */,
 				D1344D7A2553394000B00C7E /* Assets.xcassets */,
@@ -204,6 +218,96 @@
 				D1344DAF25535F1500B00C7E /* CardsView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D1D6C9892553B91600AF4BD6 /* NewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				D1344DBE2553A52D00B00C7E /* Coordinator */,
+				D1344DBD2553A52500B00C7E /* Model */,
+				D1344DBC2553A51800B00C7E /* View */,
+				D1344DBB2553A4FF00B00C7E /* ViewModel */,
+			);
+			path = NewDeck;
+			sourceTree = "<group>";
+		};
+		D1D6C98A2553B97700AF4BD6 /* DeckInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6C99E2553C50200AF4BD6 /* Coordinator */,
+				D1D6C99D2553C4FE00AF4BD6 /* Model */,
+				D1D6C99C2553C4F600AF4BD6 /* View */,
+				D1D6C99B2553C4E400AF4BD6 /* ViewModel */,
+			);
+			path = DeckInfo;
+			sourceTree = "<group>";
+		};
+		D1D6C99B2553C4E400AF4BD6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D1D6C99C2553C4F600AF4BD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6C99F2553C51C00AF4BD6 /* Cells */,
+				D1D6C98B2553B9EE00AF4BD6 /* DeckInfoViewController.swift */,
+				D1D6C98C2553B9EE00AF4BD6 /* DeckInfoViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1D6C99D2553C4FE00AF4BD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1D6C99E2553C50200AF4BD6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D1D6C99F2553C51C00AF4BD6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6C9A22553C54F00AF4BD6 /* Combinations */,
+				D1D6C9A12553C53E00AF4BD6 /* HighestValue */,
+				D1D6C9A02553C53000AF4BD6 /* CardsOrder */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D1D6C9A02553C53000AF4BD6 /* CardsOrder */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6C98F2553BB3F00AF4BD6 /* CardsOrderViewCell.swift */,
+				D1D6C9902553BB3F00AF4BD6 /* CardsOrderViewCell.xib */,
+			);
+			path = CardsOrder;
+			sourceTree = "<group>";
+		};
+		D1D6C9A12553C53E00AF4BD6 /* HighestValue */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6C9932553BC7100AF4BD6 /* HighestValueViewCell.swift */,
+				D1D6C9942553BC7100AF4BD6 /* HighestValueViewCell.xib */,
+			);
+			path = HighestValue;
+			sourceTree = "<group>";
+		};
+		D1D6C9A22553C54F00AF4BD6 /* Combinations */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6C9972553BD2900AF4BD6 /* CombinationsViewCell.swift */,
+				D1D6C9982553BD2900AF4BD6 /* CombinationsViewCell.xib */,
+			);
+			path = Combinations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,9 +416,13 @@
 			files = (
 				D1344D7E2553394000B00C7E /* LaunchScreen.storyboard in Resources */,
 				D1344D7B2553394000B00C7E /* Assets.xcassets in Resources */,
+				D1D6C9922553BB3F00AF4BD6 /* CardsOrderViewCell.xib in Resources */,
 				D1344DB025535F1500B00C7E /* CardsView.xib in Resources */,
 				D1344DA8255340AF00B00C7E /* DeckCardsViewController.xib in Resources */,
 				D1344DB42553602900B00C7E /* CardsViewCell.xib in Resources */,
+				D1D6C98E2553B9EE00AF4BD6 /* DeckInfoViewController.xib in Resources */,
+				D1D6C99A2553BD2900AF4BD6 /* CombinationsViewCell.xib in Resources */,
+				D1D6C9962553BC7100AF4BD6 /* HighestValueViewCell.xib in Resources */,
 				D1344DC62553AE7400B00C7E /* RotationCardViewCell.xib in Resources */,
 				D1344DBA2553970A00B00C7E /* SubmitFooterView.xib in Resources */,
 			);
@@ -342,14 +450,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1344D722553393E00B00C7E /* AppDelegate.swift in Sources */,
+				D1D6C9952553BC7100AF4BD6 /* HighestValueViewCell.swift in Sources */,
 				D1344DC22553A6D700B00C7E /* DeckCardsViewModel.swift in Sources */,
 				D1344DC52553AE7400B00C7E /* RotationCardViewCell.swift in Sources */,
 				D1344DB8255396C900B00C7E /* SubmitFooterView.swift in Sources */,
+				D1D6C9912553BB3F00AF4BD6 /* CardsOrderViewCell.swift in Sources */,
 				D1344D742553393E00B00C7E /* SceneDelegate.swift in Sources */,
+				D1D6C9992553BD2900AF4BD6 /* CombinationsViewCell.swift in Sources */,
 				D1344DAE25535F0200B00C7E /* CardsView.swift in Sources */,
 				D1344DB32553602900B00C7E /* CardsViewCell.swift in Sources */,
 				D1D6C9882553B68E00AF4BD6 /* DeckCardsCoordinator.swift in Sources */,
 				D1344DA7255340AF00B00C7E /* DeckCardsViewController.swift in Sources */,
+				D1D6C98D2553B9EE00AF4BD6 /* DeckInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
