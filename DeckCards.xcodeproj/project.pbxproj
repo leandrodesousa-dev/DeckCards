@@ -13,6 +13,14 @@
 		D1344D7E2553394000B00C7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1344D7C2553394000B00C7E /* LaunchScreen.storyboard */; };
 		D1344D892553394000B00C7E /* DeckCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344D882553394000B00C7E /* DeckCardsTests.swift */; };
 		D1344D942553394000B00C7E /* DeckCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344D932553394000B00C7E /* DeckCardsUITests.swift */; };
+		D1344DA7255340AF00B00C7E /* DeckCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344DA5255340AF00B00C7E /* DeckCardsViewController.swift */; };
+		D1344DA8255340AF00B00C7E /* DeckCardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1344DA6255340AF00B00C7E /* DeckCardsViewController.xib */; };
+		D1344DAE25535F0200B00C7E /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344DAD25535F0200B00C7E /* CardsView.swift */; };
+		D1344DB025535F1500B00C7E /* CardsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1344DAF25535F1500B00C7E /* CardsView.xib */; };
+		D1344DB32553602900B00C7E /* CardsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344DB12553602900B00C7E /* CardsViewCell.swift */; };
+		D1344DB42553602900B00C7E /* CardsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1344DB22553602900B00C7E /* CardsViewCell.xib */; };
+		D1344DB8255396C900B00C7E /* SubmitFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344DB7255396C900B00C7E /* SubmitFooterView.swift */; };
+		D1344DBA2553970A00B00C7E /* SubmitFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1344DB92553970A00B00C7E /* SubmitFooterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,14 @@
 		D1344D8F2553394000B00C7E /* DeckCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeckCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1344D932553394000B00C7E /* DeckCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardsUITests.swift; sourceTree = "<group>"; };
 		D1344D952553394000B00C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1344DA5255340AF00B00C7E /* DeckCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardsViewController.swift; sourceTree = "<group>"; };
+		D1344DA6255340AF00B00C7E /* DeckCardsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeckCardsViewController.xib; sourceTree = "<group>"; };
+		D1344DAD25535F0200B00C7E /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+		D1344DAF25535F1500B00C7E /* CardsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsView.xib; sourceTree = "<group>"; };
+		D1344DB12553602900B00C7E /* CardsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewCell.swift; sourceTree = "<group>"; };
+		D1344DB22553602900B00C7E /* CardsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsViewCell.xib; sourceTree = "<group>"; };
+		D1344DB7255396C900B00C7E /* SubmitFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitFooterView.swift; sourceTree = "<group>"; };
+		D1344DB92553970A00B00C7E /* SubmitFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +116,14 @@
 				D1344D7A2553394000B00C7E /* Assets.xcassets */,
 				D1344D7C2553394000B00C7E /* LaunchScreen.storyboard */,
 				D1344D7F2553394000B00C7E /* Info.plist */,
+				D1344DA5255340AF00B00C7E /* DeckCardsViewController.swift */,
+				D1344DA6255340AF00B00C7E /* DeckCardsViewController.xib */,
+				D1344DAD25535F0200B00C7E /* CardsView.swift */,
+				D1344DAF25535F1500B00C7E /* CardsView.xib */,
+				D1344DB12553602900B00C7E /* CardsViewCell.swift */,
+				D1344DB22553602900B00C7E /* CardsViewCell.xib */,
+				D1344DB7255396C900B00C7E /* SubmitFooterView.swift */,
+				D1344DB92553970A00B00C7E /* SubmitFooterView.xib */,
 			);
 			path = DeckCards;
 			sourceTree = "<group>";
@@ -228,6 +252,10 @@
 			files = (
 				D1344D7E2553394000B00C7E /* LaunchScreen.storyboard in Resources */,
 				D1344D7B2553394000B00C7E /* Assets.xcassets in Resources */,
+				D1344DB025535F1500B00C7E /* CardsView.xib in Resources */,
+				D1344DA8255340AF00B00C7E /* DeckCardsViewController.xib in Resources */,
+				D1344DB42553602900B00C7E /* CardsViewCell.xib in Resources */,
+				D1344DBA2553970A00B00C7E /* SubmitFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +281,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1344D722553393E00B00C7E /* AppDelegate.swift in Sources */,
+				D1344DB8255396C900B00C7E /* SubmitFooterView.swift in Sources */,
 				D1344D742553393E00B00C7E /* SceneDelegate.swift in Sources */,
+				D1344DAE25535F0200B00C7E /* CardsView.swift in Sources */,
+				D1344DB32553602900B00C7E /* CardsViewCell.swift in Sources */,
+				D1344DA7255340AF00B00C7E /* DeckCardsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
