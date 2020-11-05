@@ -11,4 +11,9 @@ import UIKit
 
 class SubmitFooterView: UITableViewHeaderFooterView {
     
+    var onActionButton: (() -> Void)?
+    
+    @IBAction func submitButton(_ sender: Any) {
+        onActionButton?()
+    }
 }

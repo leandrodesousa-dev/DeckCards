@@ -8,9 +8,15 @@
 
 import Foundation
 
+protocol DeckCardsViewModelCoordinatorDelegate: AnyObject {
+    func goToCardInfoScreen(_ viewModel: DeckCardsViewModel)
+}
+
 class DeckCardsViewModel {
     
     private var cards: [TypeCell] = []
+    
+    weak var coordinatorDelegate: DeckCardsViewModelCoordinatorDelegate?
     
     var numberOfCards: Int {
         return cards.count
@@ -26,6 +32,11 @@ class DeckCardsViewModel {
         cards.append(.cards(name: "tres"))
         cards.append(.cards(name: "quatro"))
         cards.append(.rotationCard(name: "um"))
+    }
+    
+    func goToCardInfoScreen() {
+        //coordinatorDelegate?.goToCardInfoScreen(self)
+        print("Pegou")
     }
 }
 

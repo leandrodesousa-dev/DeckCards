@@ -69,6 +69,10 @@ extension DeckCardsViewController: UITableViewDataSource {
         guard let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SubmitFooterView")
             as? SubmitFooterView else { return UIView() }
         
+        footerView.onActionButton = {
+            self.viewModel.goToCardInfoScreen()
+        }
+        
         return footerView
     }
     
