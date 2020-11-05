@@ -11,7 +11,20 @@ import UIKit
 class DeckCardsViewController: UIViewController {
     
     // MARK: - Properties
+    var viewModel: DeckCardsViewModel!
+    
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    
+    init() {
+        super.init(nibName: nil,bundle: nil)
+        let viewModel = DeckCardsViewModel()
+        self.viewModel = viewModel
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -57,7 +70,7 @@ extension DeckCardsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        viewModel.numberOfCards
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
