@@ -19,10 +19,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6SC-Ol-RJL">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="880"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DVt-Ba-mcM">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="880"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </tableView>
                     </subviews>
@@ -38,7 +38,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="6SC-Ol-RJL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0x4-8N-GRS"/>
-                <constraint firstAttribute="bottom" secondItem="6SC-Ol-RJL" secondAttribute="bottom" id="LdL-lV-QDt"/>
+                <constraint firstAttribute="bottom" secondItem="6SC-Ol-RJL" secondAttribute="bottom" constant="16" id="LdL-lV-QDt"/>
                 <constraint firstItem="6SC-Ol-RJL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="t9I-QA-dBm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6SC-Ol-RJL" secondAttribute="trailing" id="uwF-M8-wub"/>
             </constraints>

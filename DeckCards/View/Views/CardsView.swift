@@ -24,13 +24,14 @@ class CardsView: UIView {
         commonInit()
     }
 
-    init(frame: CGRect, firstImage: UIImage, lastImage: UIImage) {
+    init(frame: CGRect, firstImage: UIImage?, lastImage: UIImage? = nil, rotationCard: Bool = false) {
         super.init(frame: frame)
         commonInit()
         firstCardImageView.image = firstImage
         lastCardImageView.image = lastImage
         firstCardImageView.contentMode = .top
         lastCardImageView.contentMode = .top
+        lastCardImageView.isHidden = rotationCard
     }
     
     required init?(coder: NSCoder) {

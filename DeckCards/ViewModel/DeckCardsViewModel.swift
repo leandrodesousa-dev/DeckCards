@@ -10,9 +10,26 @@ import Foundation
 
 class DeckCardsViewModel {
     
-    var cards = ["um", "dois", "tres", "quatro"]
+    private var cards: [TypeCell] = []
     
     var numberOfCards: Int {
-        cards.count
+        return cards.count
     }
+    
+    var cardsSemVazio: [TypeCell] {
+        return cards
+    }
+    
+    func addCards() {
+        cards.append(.cards(name: "um"))
+        cards.append(.cards(name: "dois"))
+        cards.append(.cards(name: "tres"))
+        cards.append(.cards(name: "quatro"))
+        cards.append(.rotationCard(name: "um"))
+    }
+}
+
+enum TypeCell {
+    case cards(name: String)
+    case rotationCard(name: String)
 }

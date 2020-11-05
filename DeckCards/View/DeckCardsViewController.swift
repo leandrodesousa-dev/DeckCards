@@ -30,6 +30,8 @@ class DeckCardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.addCards()
+        
         title = "Deck Cards"
         setupTableView()
     }
@@ -40,6 +42,7 @@ class DeckCardsViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "CardsViewCell", bundle: nil), forCellReuseIdentifier: "CardsViewCell")
+        tableView.register(UINib(nibName: "RotationCardViewCell", bundle: nil), forCellReuseIdentifier: "RotationCardViewCell")
         tableView.register(UINib(nibName: "SubmitFooterView", bundle: nil),
                            forHeaderFooterViewReuseIdentifier: "SubmitFooterView")
     }
@@ -56,7 +59,7 @@ extension DeckCardsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        100
+        50
     }
 }
 
@@ -74,8 +77,16 @@ extension DeckCardsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CardsViewCell", for: indexPath) as! CardsViewCell
-        cell.addCards()
-        return cell
+        let cards = viewModel.cardsSemVazio[indexPath.row]
+        switch cards {
+        case .cards:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CardsViewCell", for: indexPath) as! CardsViewCell
+            cell.addCards()
+            return cell
+        case .rotationCard:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RotationCardViewCell", for: indexPath) as! RotationCardViewCell
+            cell.addCards()
+            return cell
+        }
     }
 }
