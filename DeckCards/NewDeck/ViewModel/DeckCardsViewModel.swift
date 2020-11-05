@@ -17,9 +17,12 @@ class DeckCardsViewModel {
     private var cards: [TypeCell] = []
     private var cardsSegundo: [TypeCellSegundo] = []
     var service: DeckService
+    var model: DeckModel
     
     init() {
         let service = DeckService()
+        let model = DeckModel(success: false, deck_id: "", remaining: 0, shuffled: nil, cards: nil, piles: nil)
+        self.model = model
         self.service = service
     }
     
@@ -43,6 +46,18 @@ class DeckCardsViewModel {
     
     func testService() {
         service.shuffleTheCards { (result) in
+            switch result {
+            case .success(let model):
+                self.model = model
+                print(model)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func testServiceDraw() {
+        service.drawCards(deckId: "ntth3mtn42l6") { (result) in
             switch result {
             case .success(let model):
                 print(model)

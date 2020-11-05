@@ -31,7 +31,8 @@ class DeckCardsViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.addCards()
-        viewModel.testService()
+ //       viewModel.testService()
+        viewModel.testServiceDraw()
         
         title = "Deck Cards"
         setupTableView()

@@ -31,7 +31,7 @@ extension APIDeckBuilder: APIBase {
         case .suffleTheCards:
             return "new/shuffle/"
         case .drawACard(let deckId):
-            return "\(deckId)/draw/?count=2"
+            return "\(deckId)/draw/"
         case .reshuffleTheCards(let deckId):
             return "\(deckId)/shuffle/"
         case .brandNewDeck:
@@ -57,10 +57,9 @@ extension APIDeckBuilder: APIBase {
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .suffleTheCards, .brandNewDeck:
+        case .suffleTheCards, .brandNewDeck, .drawACard, .reshuffleTheCards, .partialDeck, .addingToPiles, .shufflePiles,
+             .listingCardsInPiles, .drawingFromPiles:
             return .get
-        case .drawACard, .reshuffleTheCards, .partialDeck, .addingToPiles, .shufflePiles, .listingCardsInPiles, .drawingFromPiles:
-            return .post
         }
     }
     
@@ -68,8 +67,8 @@ extension APIDeckBuilder: APIBase {
         switch self {
         case .suffleTheCards, .brandNewDeck:
             return .requestParameters(urlParameters: ["deck_count": 1])
-        case .drawACard(let deckId):
-            return .requestParameters(bodyParameters: [:], urlParameters: ["deck_id": deckId])
+        case .drawACard:
+            return .requestParameters(urlParameters: ["count": 5])
         case .reshuffleTheCards(let deckId):
             return .requestParameters(bodyParameters: [:], urlParameters: ["deck_id": deckId])
         case .partialDeck(let cards):

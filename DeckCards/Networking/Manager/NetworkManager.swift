@@ -48,8 +48,8 @@ class NetworkManager<T: APIBase> {
                     } catch {
                         completion(.failure(NetworkError.errorResponse))
                     }
-                case .failure:
-                    completion(.failure(NetworkError.errorResponse))
+                case .failure(let errorResponse):
+                    completion(.failure(NetworkResponse(rawValue: errorResponse) ?? NetworkError.errorResponse))
                 }
             }
         }
