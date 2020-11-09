@@ -193,8 +193,7 @@
 				D1D6C9C625545D2600AF4BD6 /* Model */,
 				D1D6C9A92553C71F00AF4BD6 /* Networking */,
 				D1D6C9A82553C6CF00AF4BD6 /* Application */,
-				D1D6C98A2553B97700AF4BD6 /* DeckInfo */,
-				D1D6C9892553B91600AF4BD6 /* NewDeck */,
+				D1A473982558D6E500A6562D /* Screens */,
 				D1344D7A2553394000B00C7E /* Assets.xcassets */,
 				D1344D7C2553394000B00C7E /* LaunchScreen.storyboard */,
 				D1344D7F2553394000B00C7E /* Info.plist */,
@@ -272,6 +271,25 @@
 				D1344DAF25535F1500B00C7E /* CardsView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D1A473982558D6E500A6562D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D1A473992558D72C00A6562D /* Network */,
+				D1D6C98A2553B97700AF4BD6 /* DeckInfo */,
+				D1D6C9892553B91600AF4BD6 /* NewDeck */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D1A473992558D72C00A6562D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6C9D32554713F00AF4BD6 /* APIDeckBuilder.swift */,
+				D1245F752554834400B35AD3 /* DeckService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		D1D6C9892553B91600AF4BD6 /* NewDeck */ = {
@@ -376,7 +394,6 @@
 		D1D6C9A92553C71F00AF4BD6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				D1D6C9C12553D4CB00AF4BD6 /* APIDeckBuilder */,
 				D1D6C9AD2553C73A00AF4BD6 /* Encoding */,
 				D1D6C9AC2553C73400AF4BD6 /* Service */,
 				D1D6C9AB2553C73000AF4BD6 /* Manager */,
@@ -409,7 +426,6 @@
 				D1D6C9B32553C81400AF4BD6 /* HTTPTask.swift */,
 				D1D6C9BD2553CD3300AF4BD6 /* NetworkProvider.swift */,
 				D1D6C9D12554657200AF4BD6 /* NetworkLogger.swift */,
-				D1245F752554834400B35AD3 /* DeckService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -422,14 +438,6 @@
 				D1D6C9B92553CBA600AF4BD6 /* JSONParameterEncoder.swift */,
 			);
 			path = Encoding;
-			sourceTree = "<group>";
-		};
-		D1D6C9C12553D4CB00AF4BD6 /* APIDeckBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				D1D6C9D32554713F00AF4BD6 /* APIDeckBuilder.swift */,
-			);
-			path = APIDeckBuilder;
 			sourceTree = "<group>";
 		};
 		D1D6C9C625545D2600AF4BD6 /* Model */ = {

@@ -43,7 +43,7 @@ class DeckCardsViewModel {
     }
     
     var numberOfCards: Int {
-        return (cards.count + 1) / 2
+        (cards.count + 1) / 2
     }
     
     // MARK: - Methods
@@ -52,9 +52,9 @@ class DeckCardsViewModel {
     }
     
     // MARK: - Service Methods
-    func shuffleTheCards(_ dispatchSemaphore: DispatchSemaphore) {
+    func brandNewDeck(_ dispatchSemaphore: DispatchSemaphore) {
         dispatchSemaphore.wait()
-        service.shuffleTheCards { (result) in
+        service.brandNewDeck { (result) in
             switch result {
             case .success(let model):
                 self.model = model
@@ -83,7 +83,7 @@ class DeckCardsViewModel {
     func fetchDeckCards() {
         let semaphore = DispatchSemaphore(value: 1)
         
-        shuffleTheCards(semaphore)
+        brandNewDeck(semaphore)
         drawACard(semaphore)
     }
     
