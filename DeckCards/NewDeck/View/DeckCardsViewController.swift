@@ -16,10 +16,12 @@ class DeckCardsViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Initializers
     init() {
         super.init(nibName: nil,bundle: nil)
         let viewModel = DeckCardsViewModel()
         self.viewModel = viewModel
+        viewModel.viewDelegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -30,15 +32,15 @@ class DeckCardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.addCards()
- //       viewModel.testService()
-        viewModel.testServiceDraw()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.viewModel.fetchDeckCards()
+        }
         
         title = "Deck Cards"
         setupTableView()
     }
     
-    // MARK: - Methods
+    // MARK: - Private Methods
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -83,16 +85,24 @@ extension DeckCardsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cards = viewModel.cardsSemVazio[indexPath.row]
-        switch cards {
-        case .cards:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CardsViewCell", for: indexPath) as! CardsViewCell
-            cell.addCards()
-            return cell
-        case .rotationCard:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RotationCardViewCell", for: indexPath) as! RotationCardViewCell
-            cell.addCards()
-            return cell
+        let cards = viewModel.cards
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CardsViewCell", for: indexPath) as! CardsViewCell
+        cell.addCards(cards[indexPath.row],
+                      viewModel.isTheLastCard(indexPath.row) ? nil : cards[indexPath.row + 3])
+        return cell
+    }
+}
+
+//MARK: - DeckCardsViewModelViewDelegate
+extension DeckCardsViewController: DeckCardsViewModelViewDelegate {
+    func cardsSuccess(_ viewModel: DeckCardsViewModel) {
+        print("Success")
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
+    }
+    
+    func cardsFailure(_ viewModel: DeckCardsViewModel, error: Error) {
+        print("Failure")
     }
 }

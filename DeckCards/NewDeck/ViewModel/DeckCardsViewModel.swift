@@ -8,17 +8,27 @@
 
 import Foundation
 
+// MARK: - Delegates
 protocol DeckCardsViewModelCoordinatorDelegate: AnyObject {
     func goToCardInfoScreen(_ viewModel: DeckCardsViewModel)
 }
 
+protocol DeckCardsViewModelViewDelegate: AnyObject {
+    func cardsSuccess(_ viewModel: DeckCardsViewModel)
+    func cardsFailure(_ viewModel: DeckCardsViewModel, error: Error)
+}
+
 class DeckCardsViewModel {
     
-    private var cards: [TypeCell] = []
-    private var cardsSegundo: [TypeCellSegundo] = []
+    // MARK: - Properties 
     var service: DeckService
     var model: DeckModel
     
+    // MARK: - Delegates Properties
+    weak var coordinatorDelegate: DeckCardsViewModelCoordinatorDelegate?
+    weak var viewDelegate: DeckCardsViewModelViewDelegate?
+    
+    // MARK: - Initializers
     init() {
         let service = DeckService()
         let model = DeckModel(success: false, deck_id: "", remaining: 0, shuffled: nil, cards: nil, piles: nil)
@@ -26,78 +36,61 @@ class DeckCardsViewModel {
         self.service = service
     }
     
-    weak var coordinatorDelegate: DeckCardsViewModelCoordinatorDelegate?
+    // MARK: - Computer Variables Methods
+    var cards: [String] {
+        guard let cards = model.cards else { return [] }
+        return cards.map { $0.image }
+    }
     
     var numberOfCards: Int {
-        cards.count
+        return (cards.count + 1) / 2
     }
     
-    var numberOfCardsSegundo: Int {
-        cardsSegundo.count
+    // MARK: - Methods
+    func isTheLastCard(_ index: Int) -> Bool {
+        numberOfCards == index + 1
     }
     
-    var cardsSemVazio: [TypeCell] {
-        cards
-    }
-    
-    var cardsSemVazioSegundo: [TypeCellSegundo] {
-        cardsSegundo
-    }
-    
-    func testService() {
+    // MARK: - Service Methods
+    func shuffleTheCards(_ dispatchSemaphore: DispatchSemaphore) {
+        dispatchSemaphore.wait()
         service.shuffleTheCards { (result) in
             switch result {
             case .success(let model):
                 self.model = model
-                print(model)
+                self.viewDelegate?.cardsSuccess(self)
             case .failure(let error):
-                print(error)
+                self.viewDelegate?.cardsFailure(self, error: error)
             }
+            dispatchSemaphore.signal()
         }
     }
     
-    func testServiceDraw() {
-        service.drawCards(deckId: "ntth3mtn42l6") { (result) in
+    func drawACard(_ dispatchSemaphore: DispatchSemaphore) {
+        dispatchSemaphore.wait()
+        service.drawCards(deckId: model.deck_id) { (result) in
             switch result {
             case .success(let model):
-                print(model)
+                self.model = model
+                self.viewDelegate?.cardsSuccess(self)
             case .failure(let error):
-                print(error)
+                self.viewDelegate?.cardsFailure(self, error: error)
             }
+            dispatchSemaphore.signal()
         }
     }
     
-    
-    func addCards() {
-        cards.append(.cards(name: "um"))
-        cards.append(.cards(name: "dois"))
-        cards.append(.cards(name: "tres"))
-        cards.append(.cards(name: "quatro"))
-        cards.append(.rotationCard(name: "um"))
+    func fetchDeckCards() {
+        let semaphore = DispatchSemaphore(value: 1)
+        
+        shuffleTheCards(semaphore)
+        drawACard(semaphore)
     }
     
-    func addCardsSegundo() {
-        cardsSegundo.append(.cards(name: "um"))
-        cardsSegundo.append(.cards(name: "dois"))
-        cardsSegundo.append(.cards(name: "tres"))
-        cardsSegundo.append(.cards(name: "quatro"))
-        cardsSegundo.append(.highestValue(name: "um"))
-        cardsSegundo.append(.combinations(name: "dois"))
-    }
-    
+    // MARK: - Coordinator Delegates Methods
     func goToCardInfoScreen() {
+        // TODO: - Fazer coordinator ainda
         //coordinatorDelegate?.goToCardInfoScreen(self)
         print("Pegou")
     }
-}
-
-enum TypeCell {
-    case cards(name: String)
-    case rotationCard(name: String)
-}
-
-enum TypeCellSegundo {
-    case cards(name: String)
-    case highestValue(name: String)
-    case combinations(name: String)
 }

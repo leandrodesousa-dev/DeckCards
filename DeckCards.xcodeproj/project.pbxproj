@@ -25,8 +25,6 @@
 		D1344DB8255396C900B00C7E /* SubmitFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344DB7255396C900B00C7E /* SubmitFooterView.swift */; };
 		D1344DBA2553970A00B00C7E /* SubmitFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1344DB92553970A00B00C7E /* SubmitFooterView.xib */; };
 		D1344DC22553A6D700B00C7E /* DeckCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344DC12553A6D700B00C7E /* DeckCardsViewModel.swift */; };
-		D1344DC52553AE7400B00C7E /* RotationCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344DC32553AE7400B00C7E /* RotationCardViewCell.swift */; };
-		D1344DC62553AE7400B00C7E /* RotationCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1344DC42553AE7400B00C7E /* RotationCardViewCell.xib */; };
 		D1D6C9882553B68E00AF4BD6 /* DeckCardsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9872553B68E00AF4BD6 /* DeckCardsCoordinator.swift */; };
 		D1D6C98D2553B9EE00AF4BD6 /* DeckInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C98B2553B9EE00AF4BD6 /* DeckInfoViewController.swift */; };
 		D1D6C98E2553B9EE00AF4BD6 /* DeckInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D6C98C2553B9EE00AF4BD6 /* DeckInfoViewController.xib */; };
@@ -108,8 +106,6 @@
 		D1344DB7255396C900B00C7E /* SubmitFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitFooterView.swift; sourceTree = "<group>"; };
 		D1344DB92553970A00B00C7E /* SubmitFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitFooterView.xib; sourceTree = "<group>"; };
 		D1344DC12553A6D700B00C7E /* DeckCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardsViewModel.swift; sourceTree = "<group>"; };
-		D1344DC32553AE7400B00C7E /* RotationCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationCardViewCell.swift; sourceTree = "<group>"; };
-		D1344DC42553AE7400B00C7E /* RotationCardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RotationCardViewCell.xib; sourceTree = "<group>"; };
 		D1D6C9872553B68E00AF4BD6 /* DeckCardsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCardsCoordinator.swift; sourceTree = "<group>"; };
 		D1D6C98B2553B9EE00AF4BD6 /* DeckInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckInfoViewController.swift; sourceTree = "<group>"; };
 		D1D6C98C2553B9EE00AF4BD6 /* DeckInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeckInfoViewController.xib; sourceTree = "<group>"; };
@@ -263,8 +259,6 @@
 			children = (
 				D1344DB12553602900B00C7E /* CardsViewCell.swift */,
 				D1344DB22553602900B00C7E /* CardsViewCell.xib */,
-				D1344DC32553AE7400B00C7E /* RotationCardViewCell.swift */,
-				D1344DC42553AE7400B00C7E /* RotationCardViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -571,7 +565,6 @@
 				D1D6C98E2553B9EE00AF4BD6 /* DeckInfoViewController.xib in Resources */,
 				D1D6C99A2553BD2900AF4BD6 /* CombinationsViewCell.xib in Resources */,
 				D1D6C9962553BC7100AF4BD6 /* HighestValueViewCell.xib in Resources */,
-				D1344DC62553AE7400B00C7E /* RotationCardViewCell.xib in Resources */,
 				D1344DBA2553970A00B00C7E /* SubmitFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,7 +593,6 @@
 				D1344D722553393E00B00C7E /* AppDelegate.swift in Sources */,
 				D1D6C9952553BC7100AF4BD6 /* HighestValueViewCell.swift in Sources */,
 				D1344DC22553A6D700B00C7E /* DeckCardsViewModel.swift in Sources */,
-				D1344DC52553AE7400B00C7E /* RotationCardViewCell.swift in Sources */,
 				D1D6C9C02553D0C200AF4BD6 /* NetworkManager.swift in Sources */,
 				D1344DB8255396C900B00C7E /* SubmitFooterView.swift in Sources */,
 				D1D6C9D22554657200AF4BD6 /* NetworkLogger.swift in Sources */,

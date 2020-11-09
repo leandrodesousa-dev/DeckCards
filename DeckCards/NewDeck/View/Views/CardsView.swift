@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CardsView: UIView {
     
@@ -23,15 +24,19 @@ class CardsView: UIView {
         super.init(frame: frame)
         commonInit()
     }
-
-    init(frame: CGRect, firstImage: UIImage?, lastImage: UIImage? = nil, rotationCard: Bool = false) {
-        super.init(frame: frame)
+    
+    // MARK: - Methods
+    
+    func setup(frame: CGRect, firstImageName: String, lastImageName: String?) {
         commonInit()
-        firstCardImageView.image = firstImage
-        lastCardImageView.image = lastImage
-        firstCardImageView.contentMode = .top
-        lastCardImageView.contentMode = .top
-        lastCardImageView.isHidden = rotationCard
+        DispatchQueue.main.async {
+            self.firstCardImageView.sd_setImage(with: URL(string: firstImageName))
+            if let lastImageName = lastImageName {
+                 self.lastCardImageView.sd_setImage(with: URL(string: lastImageName))
+            } else {
+                self.lastCardImageView.isHidden = true
+            }
+        }
     }
     
     required init?(coder: NSCoder) {

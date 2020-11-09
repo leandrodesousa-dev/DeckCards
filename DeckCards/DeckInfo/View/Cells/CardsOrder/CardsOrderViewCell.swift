@@ -19,9 +19,9 @@ class CardsOrderViewCell: UITableViewCell {
     }
     
     func addCards() {
-        cardsStackView.addArrangedSubview(CardsView(frame: CardsViewCell().frame,
-                                               firstImage: UIImage(named: "card")!,
-                                               lastImage: UIImage(named: "card")!))
+//        cardsStackView.addArrangedSubview(CardsView(frame: CardsViewCell().frame,
+//                                               firstImage: UIImage(named: "card")!,
+//                                               lastImage: UIImage(named: "card")!))
         self.layoutIfNeeded()
     }
 }

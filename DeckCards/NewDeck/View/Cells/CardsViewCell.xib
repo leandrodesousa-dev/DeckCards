@@ -41,7 +41,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="cardsView" destination="ZYT-HR-1Vb" id="fPV-cE-Df8"/>
+                <outlet property="cardsStackView" destination="ZYT-HR-1Vb" id="zTq-tY-AJf"/>
             </connections>
             <point key="canvasLocation" x="139" y="153"/>
         </tableViewCell>

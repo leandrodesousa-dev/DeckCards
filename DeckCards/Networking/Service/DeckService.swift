@@ -20,7 +20,7 @@ class DeckService: NetworkManager<APIDeckBuilder> {
         }
     }
     
-    func drawCards(deckId: String = "l4ndyyh66yht", _ completion: @escaping (Swift.Result<DeckModel, Error>) -> Void) {
+    func drawCards(deckId: String, _ completion: @escaping (Swift.Result<DeckModel, Error>) -> Void) {
         fetch(.drawACard(deckId: deckId)) { (result) in
             switch result {
             case .success(let model):

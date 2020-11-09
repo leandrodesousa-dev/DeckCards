@@ -9,20 +9,23 @@
 import UIKit
 
 class CardsViewCell: UITableViewCell {
-
+    
     // MARK: - Outlets
-    @IBOutlet weak var cardsView: UIStackView!
+    @IBOutlet weak var cardsStackView: UIStackView!
     
     // MARK: - Methods
     override func prepareForReuse() {
         super.prepareForReuse()
-        cardsView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        cardsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
     }
     
-    func addCards() {
-        cardsView.addArrangedSubview(CardsView(frame: CardsViewCell().frame,
-                                               firstImage: UIImage(named: "card")!,
-                                               lastImage: UIImage(named: "card")!))
+    func addCards(_ firstImageName: String, _ lastImageName: String?) {
+        let cardView = CardsView()
+        cardView.setup(frame: CardsViewCell().frame,
+                       firstImageName: firstImageName,
+                       lastImageName: lastImageName)
+        cardsStackView.addArrangedSubview(cardView)
+       
         self.layoutIfNeeded()
     }
 }

@@ -17,8 +17,6 @@ class DeckInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.addCardsSegundo()
-        
         title = "Here is the order"
         
         tableView.delegate = self
@@ -52,24 +50,25 @@ extension DeckInfoViewController: UITableViewDelegate {
 
 extension DeckInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfCardsSegundo
+        2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cards = viewModel.cardsSemVazioSegundo[indexPath.row]
-        switch cards {
-        case .cards:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CardsOrderViewCell", for: indexPath) as! CardsOrderViewCell
-            cell.addCards()
-            return cell
-        case .combinations:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HighestValueViewCell", for: indexPath) as! HighestValueViewCell
-            cell.setup()
-            return cell
-        case .highestValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CombinationsViewCell", for: indexPath) as! CombinationsViewCell
-            cell.setup()
-            return cell
-        }
+        return UITableViewCell()
+//        let cards = viewModel.cardsSemVazioSegundo[indexPath.row]
+//        switch cards {
+//        case .cards:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CardsOrderViewCell", for: indexPath) as! CardsOrderViewCell
+//            cell.addCards()
+//            return cell
+//        case .combinations:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "HighestValueViewCell", for: indexPath) as! HighestValueViewCell
+//            cell.setup()
+//            return cell
+//        case .highestValue:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CombinationsViewCell", for: indexPath) as! CombinationsViewCell
+//            cell.setup()
+//            return cell
+//        }
     }
 }
