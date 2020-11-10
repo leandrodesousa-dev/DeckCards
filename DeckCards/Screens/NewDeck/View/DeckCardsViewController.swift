@@ -17,9 +17,8 @@ class DeckCardsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Initializers
-    init() {
+    init(_ viewModel: DeckCardsViewModel) {
         super.init(nibName: nil,bundle: nil)
-        let viewModel = DeckCardsViewModel()
         self.viewModel = viewModel
         viewModel.viewDelegate = self
     }

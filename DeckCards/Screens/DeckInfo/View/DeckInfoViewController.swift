@@ -12,7 +12,7 @@ class DeckInfoViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: DeckCardsViewModel!
+    var viewModel: DeckInfoViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,12 @@ class DeckInfoViewController: UIViewController {
         tableView.register(UINib(nibName: "CardsOrderViewCell", bundle: nil), forCellReuseIdentifier: "CardsOrderViewCell")
         tableView.register(UINib(nibName: "HighestValueViewCell", bundle: nil), forCellReuseIdentifier: "HighestValueViewCell")
         tableView.register(UINib(nibName: "CombinationsViewCell", bundle: nil), forCellReuseIdentifier: "CombinationsViewCell")
+        
+        viewModel.drawACard()
     }
     
-    init() {
+    init(_ viewModel: DeckInfoViewModel) {
         super.init(nibName: nil,bundle: nil)
-        let viewModel = DeckCardsViewModel()
         self.viewModel = viewModel
     }
     

@@ -68,7 +68,7 @@ extension APIDeckBuilder: APIBase {
         case .suffleTheCards, .brandNewDeck:
             return .requestParameters(urlParameters: ["deck_count": 1])
         case .drawACard:
-            return .requestParameters(urlParameters: ["count": 11])
+            return .requestParameters(urlParameters: ["count": 5])
         case .reshuffleTheCards(let deckId):
             return .requestParameters(bodyParameters: [:], urlParameters: ["deck_id": deckId])
         case .partialDeck(let cards):

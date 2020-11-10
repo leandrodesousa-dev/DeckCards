@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Delegates
 protocol DeckCardsViewModelCoordinatorDelegate: AnyObject {
-    func goToCardInfoScreen(_ viewModel: DeckCardsViewModel)
+    func goToCardInfoScreen(_ viewModel: DeckCardsViewModel, deckId: String)
 }
 
 protocol DeckCardsViewModelViewDelegate: AnyObject {
@@ -54,7 +54,7 @@ class DeckCardsViewModel {
     // MARK: - Service Methods
     func brandNewDeck(_ dispatchSemaphore: DispatchSemaphore) {
         dispatchSemaphore.wait()
-        service.brandNewDeck { (result) in
+        service.shuffleTheCards { (result) in
             switch result {
             case .success(let model):
                 self.model = model
@@ -89,8 +89,6 @@ class DeckCardsViewModel {
     
     // MARK: - Coordinator Delegates Methods
     func goToCardInfoScreen() {
-        // TODO: - Fazer coordinator ainda
-        //coordinatorDelegate?.goToCardInfoScreen(self)
-        print("Pegou")
+        coordinatorDelegate?.goToCardInfoScreen(self, deckId: model.deck_id)
     }
 }

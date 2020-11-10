@@ -7,18 +7,41 @@
 //
 
 import Foundation
+import UIKit
 
-class DeckCardsCoordinator {
+class DeckCardsCoordinator: BaseCoordinator {
+    typealias View = DeckCardsViewController
+    var view: View?
+    var navigation: UINavigationController?
+    var presentationType: PresentationType?
     
-    init() {
+    var deckInfoCoordinator: DeckInfoCoordinator?
+    
+    func start() -> UINavigationController {
         let viewModel = DeckCardsViewModel()
         viewModel.coordinatorDelegate = self
         
+        view = DeckCardsViewController(viewModel)
+        guard let view = self.view else { return UINavigationController() }
+        
+        navigation = UINavigationController(rootViewController: view)
+        guard let navigation = self.navigation else { return UINavigationController() }
+        
+        return navigation
+    }
+    
+    func stop() {
+        view = nil
+        navigation = nil
+        presentationType = nil
+        deckInfoCoordinator = nil
     }
 }
 
 extension DeckCardsCoordinator: DeckCardsViewModelCoordinatorDelegate {
-    func goToCardInfoScreen(_ viewModel: DeckCardsViewModel) {
-        //code
+    func goToCardInfoScreen(_ viewModel: DeckCardsViewModel, deckId: String) {
+        guard let navigation = navigation else { return }
+        deckInfoCoordinator = DeckInfoCoordinator(deckId)
+        deckInfoCoordinator?.start(usingPresentation: .push(navigationController: navigation))
     }
 }

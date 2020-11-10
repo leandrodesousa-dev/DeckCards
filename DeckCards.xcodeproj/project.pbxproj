@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1138CF22558DBA6000988F6 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1138CF12558DBA6000988F6 /* BaseCoordinator.swift */; };
+		D1138CF82558E72D000988F6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1138CF72558E72D000988F6 /* AppCoordinator.swift */; };
 		D1245F762554834400B35AD3 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1245F752554834400B35AD3 /* DeckService.swift */; };
 		D1245F792554A66200B35AD3 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1245F782554A66200B35AD3 /* SDWebImage.framework */; };
 		D1245F7A2554A66200B35AD3 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1245F782554A66200B35AD3 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,6 +51,9 @@
 		D1D6C9CF25545D9F00AF4BD6 /* PlayersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9CE25545D9F00AF4BD6 /* PlayersModel.swift */; };
 		D1D6C9D22554657200AF4BD6 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9D12554657200AF4BD6 /* NetworkLogger.swift */; };
 		D1D6C9D42554713F00AF4BD6 /* APIDeckBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9D32554713F00AF4BD6 /* APIDeckBuilder.swift */; };
+		D1F41E852559DFF6001289E0 /* DeckInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F41E842559DFF6001289E0 /* DeckInfoCoordinator.swift */; };
+		D1F41E8A2559E04B001289E0 /* DeckInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F41E892559E04B001289E0 /* DeckInfoViewModel.swift */; };
+		D1F41E8E2559E0CC001289E0 /* DeckInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F41E8D2559E0CB001289E0 /* DeckInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +88,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D1138CF12558DBA6000988F6 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		D1138CF72558E72D000988F6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D1245F752554834400B35AD3 /* DeckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
 		D1245F782554A66200B35AD3 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		D1344D6E2553393E00B00C7E /* DeckCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +137,9 @@
 		D1D6C9CE25545D9F00AF4BD6 /* PlayersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersModel.swift; sourceTree = "<group>"; };
 		D1D6C9D12554657200AF4BD6 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		D1D6C9D32554713F00AF4BD6 /* APIDeckBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDeckBuilder.swift; sourceTree = "<group>"; };
+		D1F41E842559DFF6001289E0 /* DeckInfoCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckInfoCoordinator.swift; sourceTree = "<group>"; };
+		D1F41E892559E04B001289E0 /* DeckInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckInfoViewModel.swift; sourceTree = "<group>"; };
+		D1F41E8D2559E0CB001289E0 /* DeckInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +168,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D1138CEE2558DAC2000988F6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D1138CF02558DB90000988F6 /* Base */,
+				D1344DC02553A56300B00C7E /* UI */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D1138CEF2558DAE1000988F6 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				D1344DB92553970A00B00C7E /* SubmitFooterView.xib */,
+				D1344DB7255396C900B00C7E /* SubmitFooterView.swift */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		D1138CF02558DB90000988F6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D1138CF12558DBA6000988F6 /* BaseCoordinator.swift */,
+				D1138CF72558E72D000988F6 /* AppCoordinator.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		D1245F772554A66200B35AD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +230,7 @@
 				D1D6C9C625545D2600AF4BD6 /* Model */,
 				D1D6C9A92553C71F00AF4BD6 /* Networking */,
 				D1D6C9A82553C6CF00AF4BD6 /* Application */,
+				D1138CEE2558DAC2000988F6 /* Common */,
 				D1A473982558D6E500A6562D /* Screens */,
 				D1344D7A2553394000B00C7E /* Assets.xcassets */,
 				D1344D7C2553394000B00C7E /* LaunchScreen.storyboard */,
@@ -230,7 +268,7 @@
 		D1344DBC2553A51800B00C7E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D1344DC02553A56300B00C7E /* Views */,
+				D1138CEF2558DAE1000988F6 /* Footer */,
 				D1344DBF2553A53A00B00C7E /* Cells */,
 				D1344DA5255340AF00B00C7E /* DeckCardsViewController.swift */,
 				D1344DA6255340AF00B00C7E /* DeckCardsViewController.xib */,
@@ -262,15 +300,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		D1344DC02553A56300B00C7E /* Views */ = {
+		D1344DC02553A56300B00C7E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D1344DB92553970A00B00C7E /* SubmitFooterView.xib */,
-				D1344DB7255396C900B00C7E /* SubmitFooterView.swift */,
 				D1344DAD25535F0200B00C7E /* CardsView.swift */,
 				D1344DAF25535F1500B00C7E /* CardsView.xib */,
 			);
-			path = Views;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		D1A473982558D6E500A6562D /* Screens */ = {
@@ -306,19 +342,12 @@
 		D1D6C98A2553B97700AF4BD6 /* DeckInfo */ = {
 			isa = PBXGroup;
 			children = (
-				D1D6C99E2553C50200AF4BD6 /* Coordinator */,
-				D1D6C99D2553C4FE00AF4BD6 /* Model */,
+				D1F41E8C2559E0B5001289E0 /* Model */,
+				D1F41E862559E021001289E0 /* ViewModel */,
+				D1F41E832559DFE8001289E0 /* Coordinator */,
 				D1D6C99C2553C4F600AF4BD6 /* View */,
-				D1D6C99B2553C4E400AF4BD6 /* ViewModel */,
 			);
 			path = DeckInfo;
-			sourceTree = "<group>";
-		};
-		D1D6C99B2553C4E400AF4BD6 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D1D6C99C2553C4F600AF4BD6 /* View */ = {
@@ -329,20 +358,6 @@
 				D1D6C98C2553B9EE00AF4BD6 /* DeckInfoViewController.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		D1D6C99D2553C4FE00AF4BD6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D1D6C99E2553C50200AF4BD6 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		D1D6C99F2553C51C00AF4BD6 /* Cells */ = {
@@ -457,6 +472,30 @@
 				D1D6C9BB2553CC9000AF4BD6 /* NetworkRouter.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D1F41E832559DFE8001289E0 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D1F41E842559DFF6001289E0 /* DeckInfoCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D1F41E862559E021001289E0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D1F41E892559E04B001289E0 /* DeckInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D1F41E8C2559E0B5001289E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1F41E8D2559E0CB001289E0 /* DeckInfoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,6 +638,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1344D722553393E00B00C7E /* AppDelegate.swift in Sources */,
+				D1F41E8A2559E04B001289E0 /* DeckInfoViewModel.swift in Sources */,
 				D1D6C9952553BC7100AF4BD6 /* HighestValueViewCell.swift in Sources */,
 				D1344DC22553A6D700B00C7E /* DeckCardsViewModel.swift in Sources */,
 				D1D6C9C02553D0C200AF4BD6 /* NetworkManager.swift in Sources */,
@@ -609,6 +649,8 @@
 				D1D6C9B02553C76900AF4BD6 /* APIBase.swift in Sources */,
 				D1D6C9B62553C8B000AF4BD6 /* ParameterEncoding.swift in Sources */,
 				D1D6C9C925545D3F00AF4BD6 /* DeckModel.swift in Sources */,
+				D1138CF22558DBA6000988F6 /* BaseCoordinator.swift in Sources */,
+				D1F41E8E2559E0CC001289E0 /* DeckInfoModel.swift in Sources */,
 				D1D6C9B82553CA5600AF4BD6 /* URLParameterEncoder.swift in Sources */,
 				D1344D742553393E00B00C7E /* SceneDelegate.swift in Sources */,
 				D1245F762554834400B35AD3 /* DeckService.swift in Sources */,
@@ -616,6 +658,7 @@
 				D1D6C9CD25545D8A00AF4BD6 /* PilesModel.swift in Sources */,
 				D1D6C9B22553C7D200AF4BD6 /* HTTPMethod.swift in Sources */,
 				D1D6C9CB25545D7400AF4BD6 /* CardsDetailsModel.swift in Sources */,
+				D1138CF82558E72D000988F6 /* AppCoordinator.swift in Sources */,
 				D1D6C9992553BD2900AF4BD6 /* CombinationsViewCell.swift in Sources */,
 				D1344DAE25535F0200B00C7E /* CardsView.swift in Sources */,
 				D1344DB32553602900B00C7E /* CardsViewCell.swift in Sources */,
@@ -623,6 +666,7 @@
 				D1D6C9882553B68E00AF4BD6 /* DeckCardsCoordinator.swift in Sources */,
 				D1344DA7255340AF00B00C7E /* DeckCardsViewController.swift in Sources */,
 				D1D6C9BC2553CC9000AF4BD6 /* NetworkRouter.swift in Sources */,
+				D1F41E852559DFF6001289E0 /* DeckInfoCoordinator.swift in Sources */,
 				D1D6C98D2553B9EE00AF4BD6 /* DeckInfoViewController.swift in Sources */,
 				D1D6C9CF25545D9F00AF4BD6 /* PlayersModel.swift in Sources */,
 				D1D6C9BA2553CBA600AF4BD6 /* JSONParameterEncoder.swift in Sources */,
