@@ -42,23 +42,22 @@ class DeckCardsViewModel {
         return cards.map { $0.image }
     }
     
-    var numberOfCards: Int {
+    var numberLinesOfCards: Int {
         (cards.count + 1) / 2
     }
     
     // MARK: - Methods
     func isTheLastCard(_ index: Int) -> Bool {
-        numberOfCards == index + 1
+        cards.count == index + 1
     }
     
     // MARK: - Service Methods
-    func brandNewDeck(_ dispatchSemaphore: DispatchSemaphore) {
+    func shuffleTheCards(_ dispatchSemaphore: DispatchSemaphore) {
         dispatchSemaphore.wait()
         service.shuffleTheCards { (result) in
             switch result {
             case .success(let model):
                 self.model = model
-                self.viewDelegate?.cardsSuccess(self)
             case .failure(let error):
                 self.viewDelegate?.cardsFailure(self, error: error)
             }
@@ -83,7 +82,7 @@ class DeckCardsViewModel {
     func fetchDeckCards() {
         let semaphore = DispatchSemaphore(value: 1)
         
-        brandNewDeck(semaphore)
+        shuffleTheCards(semaphore)
         drawACard(semaphore)
     }
     

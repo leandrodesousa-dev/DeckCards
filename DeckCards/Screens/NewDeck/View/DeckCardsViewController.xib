@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeckCardsViewController" customModule="DeckCards" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="0lb-t1-6x9" id="6Zb-zA-TZL"/>
+                <outlet property="backgroundView" destination="h9Q-d4-fBB" id="YQs-Uw-VrV"/>
                 <outlet property="tableView" destination="DVt-Ba-mcM" id="B0o-nt-iBe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,11 +27,28 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="880"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9Q-d4-fBB">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="880"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0lb-t1-6x9">
+                            <rect key="frame" x="187" y="420" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="6IY-Gk-Oum"/>
+                                <constraint firstAttribute="height" constant="40" id="unA-AD-ywu"/>
+                            </constraints>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="DVt-Ba-mcM" secondAttribute="bottom" id="HD3-iG-04F"/>
+                        <constraint firstItem="h9Q-d4-fBB" firstAttribute="top" secondItem="6SC-Ol-RJL" secondAttribute="top" id="LY0-gR-pr6"/>
+                        <constraint firstItem="0lb-t1-6x9" firstAttribute="centerY" secondItem="6SC-Ol-RJL" secondAttribute="centerY" id="XB1-6a-fe0"/>
                         <constraint firstAttribute="trailing" secondItem="DVt-Ba-mcM" secondAttribute="trailing" id="bl0-El-e4f"/>
+                        <constraint firstAttribute="bottom" secondItem="h9Q-d4-fBB" secondAttribute="bottom" id="e1q-EE-aRg"/>
+                        <constraint firstItem="h9Q-d4-fBB" firstAttribute="leading" secondItem="6SC-Ol-RJL" secondAttribute="leading" id="hiI-aT-b4t"/>
+                        <constraint firstAttribute="trailing" secondItem="h9Q-d4-fBB" secondAttribute="trailing" id="kT7-89-Y5D"/>
+                        <constraint firstItem="0lb-t1-6x9" firstAttribute="centerX" secondItem="6SC-Ol-RJL" secondAttribute="centerX" id="qz4-dA-yP3"/>
                         <constraint firstItem="DVt-Ba-mcM" firstAttribute="top" secondItem="6SC-Ol-RJL" secondAttribute="top" id="tVD-uY-8K0"/>
                         <constraint firstItem="DVt-Ba-mcM" firstAttribute="leading" secondItem="6SC-Ol-RJL" secondAttribute="leading" id="xEP-J4-csI"/>
                     </constraints>
@@ -44,7 +63,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
 </document>

@@ -26,7 +26,7 @@ class DeckInfoViewController: UIViewController {
         tableView.register(UINib(nibName: "HighestValueViewCell", bundle: nil), forCellReuseIdentifier: "HighestValueViewCell")
         tableView.register(UINib(nibName: "CombinationsViewCell", bundle: nil), forCellReuseIdentifier: "CombinationsViewCell")
         
-        viewModel.drawACard()
+        //viewModel.drawACard()
     }
     
     init(_ viewModel: DeckInfoViewModel) {

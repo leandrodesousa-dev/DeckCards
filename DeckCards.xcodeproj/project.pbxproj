@@ -52,8 +52,8 @@
 		D1D6C9D22554657200AF4BD6 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9D12554657200AF4BD6 /* NetworkLogger.swift */; };
 		D1D6C9D42554713F00AF4BD6 /* APIDeckBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6C9D32554713F00AF4BD6 /* APIDeckBuilder.swift */; };
 		D1F41E852559DFF6001289E0 /* DeckInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F41E842559DFF6001289E0 /* DeckInfoCoordinator.swift */; };
-		D1F41E8A2559E04B001289E0 /* DeckInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F41E892559E04B001289E0 /* DeckInfoViewModel.swift */; };
 		D1F41E8E2559E0CC001289E0 /* DeckInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F41E8D2559E0CB001289E0 /* DeckInfoModel.swift */; };
+		D1F41E91255B1990001289E0 /* DeckInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F41E90255B1990001289E0 /* DeckInfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,8 +138,8 @@
 		D1D6C9D12554657200AF4BD6 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		D1D6C9D32554713F00AF4BD6 /* APIDeckBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDeckBuilder.swift; sourceTree = "<group>"; };
 		D1F41E842559DFF6001289E0 /* DeckInfoCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckInfoCoordinator.swift; sourceTree = "<group>"; };
-		D1F41E892559E04B001289E0 /* DeckInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckInfoViewModel.swift; sourceTree = "<group>"; };
 		D1F41E8D2559E0CB001289E0 /* DeckInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckInfoModel.swift; sourceTree = "<group>"; };
+		D1F41E90255B1990001289E0 /* DeckInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckInfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,8 +342,8 @@
 		D1D6C98A2553B97700AF4BD6 /* DeckInfo */ = {
 			isa = PBXGroup;
 			children = (
+				D1F41E8F255B197A001289E0 /* ViewModel */,
 				D1F41E8C2559E0B5001289E0 /* Model */,
-				D1F41E862559E021001289E0 /* ViewModel */,
 				D1F41E832559DFE8001289E0 /* Coordinator */,
 				D1D6C99C2553C4F600AF4BD6 /* View */,
 			);
@@ -482,20 +482,20 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		D1F41E862559E021001289E0 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				D1F41E892559E04B001289E0 /* DeckInfoViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		D1F41E8C2559E0B5001289E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				D1F41E8D2559E0CB001289E0 /* DeckInfoModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D1F41E8F255B197A001289E0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D1F41E90255B1990001289E0 /* DeckInfoViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -638,7 +638,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1344D722553393E00B00C7E /* AppDelegate.swift in Sources */,
-				D1F41E8A2559E04B001289E0 /* DeckInfoViewModel.swift in Sources */,
 				D1D6C9952553BC7100AF4BD6 /* HighestValueViewCell.swift in Sources */,
 				D1344DC22553A6D700B00C7E /* DeckCardsViewModel.swift in Sources */,
 				D1D6C9C02553D0C200AF4BD6 /* NetworkManager.swift in Sources */,
@@ -660,6 +659,7 @@
 				D1D6C9CB25545D7400AF4BD6 /* CardsDetailsModel.swift in Sources */,
 				D1138CF82558E72D000988F6 /* AppCoordinator.swift in Sources */,
 				D1D6C9992553BD2900AF4BD6 /* CombinationsViewCell.swift in Sources */,
+				D1F41E91255B1990001289E0 /* DeckInfoViewModel.swift in Sources */,
 				D1344DAE25535F0200B00C7E /* CardsView.swift in Sources */,
 				D1344DB32553602900B00C7E /* CardsViewCell.swift in Sources */,
 				D1D6C9B42553C81400AF4BD6 /* HTTPTask.swift in Sources */,

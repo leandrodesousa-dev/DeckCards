@@ -15,6 +15,8 @@ class DeckCardsViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var backgroundView: UIView!
     
     // MARK: - Initializers
     init(_ viewModel: DeckCardsViewModel) {
@@ -31,12 +33,9 @@ class DeckCardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.viewModel.fetchDeckCards()
-        }
-        
         title = "Deck Cards"
-        setupTableView()
+        
+        fechtServices()
     }
     
     // MARK: - Private Methods
@@ -48,6 +47,29 @@ class DeckCardsViewController: UIViewController {
         tableView.register(UINib(nibName: "RotationCardViewCell", bundle: nil), forCellReuseIdentifier: "RotationCardViewCell")
         tableView.register(UINib(nibName: "SubmitFooterView", bundle: nil),
                            forHeaderFooterViewReuseIdentifier: "SubmitFooterView")
+    }
+    
+    private func setupAlertView() {
+        let alert = UIAlertController(title: "Bem vindo!!",
+                                      message: "Escolha uma mão com cinco cartas e uma carta de rotação",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func fechtServices() {
+        self.startIndicator(false)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.viewModel.fetchDeckCards()
+        }
+    }
+    
+    private func startIndicator(_ isHidden: Bool) {
+        DispatchQueue.main.async {
+            !isHidden ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = isHidden
+            self.backgroundView.isHidden = isHidden
+        }
     }
 }
 
@@ -80,14 +102,18 @@ extension DeckCardsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfCards
+        viewModel.numberLinesOfCards
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cards = viewModel.cards
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardsViewCell", for: indexPath) as! CardsViewCell
-        cell.addCards(cards[indexPath.row],
-                      viewModel.isTheLastCard(indexPath.row) ? nil : cards[indexPath.row + 3])
+        let index = indexPath.row * 2
+        if !(viewModel.isTheLastCard(index)) {
+                    cell.addCards(cards[index], cards[index + 1])
+        } else {
+           cell.addCards(cards[index], nil)
+        }
         return cell
     }
 }
@@ -96,8 +122,11 @@ extension DeckCardsViewController: UITableViewDataSource {
 extension DeckCardsViewController: DeckCardsViewModelViewDelegate {
     func cardsSuccess(_ viewModel: DeckCardsViewModel) {
         print("Success")
+        startIndicator(true)
         DispatchQueue.main.async {
+            self.setupTableView()
             self.tableView.reloadData()
+            self.setupAlertView()
         }
     }
     
