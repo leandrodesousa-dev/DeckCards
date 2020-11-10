@@ -41,4 +41,15 @@ class DeckService: NetworkManager<APIDeckBuilder> {
             }
         }
     }
+    
+    func aPartialDeck(cards: String,_ completion: @escaping (Swift.Result<DeckModel, Error>) -> Void) {
+        fetch(.partialDeck(cards: cards)) { (result) in
+            switch result {
+            case .success(let model):
+                completion(.success(model))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

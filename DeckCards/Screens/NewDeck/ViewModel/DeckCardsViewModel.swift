@@ -16,6 +16,7 @@ protocol DeckCardsViewModelCoordinatorDelegate: AnyObject {
 protocol DeckCardsViewModelViewDelegate: AnyObject {
     func cardsSuccess(_ viewModel: DeckCardsViewModel)
     func cardsFailure(_ viewModel: DeckCardsViewModel, error: Error)
+    func cardsPartialSuccess(_ viewModel: DeckCardsViewModel, deckId: String)
 }
 
 class DeckCardsViewModel {
@@ -79,6 +80,17 @@ class DeckCardsViewModel {
         }
     }
     
+    func aPartialDeck() {
+        service.aPartialDeck(cards: "AS,2S,KS,AD,2D,KD,AC,2C,KC,AH,2H,KH") { (result) in
+            switch result {
+            case .success(let model):
+                self.viewDelegate?.cardsPartialSuccess(self, deckId: model.deck_id)
+            case .failure(let error):
+                self.viewDelegate?.cardsFailure(self, error: error)
+            }
+        }
+    }
+    
     func fetchDeckCards() {
         let semaphore = DispatchSemaphore(value: 1)
         
@@ -87,7 +99,7 @@ class DeckCardsViewModel {
     }
     
     // MARK: - Coordinator Delegates Methods
-    func goToCardInfoScreen() {
-        coordinatorDelegate?.goToCardInfoScreen(self, deckId: model.deck_id)
+    func goToCardInfoScreen(deckId: String) {
+        coordinatorDelegate?.goToCardInfoScreen(self, deckId: deckId)
     }
 }

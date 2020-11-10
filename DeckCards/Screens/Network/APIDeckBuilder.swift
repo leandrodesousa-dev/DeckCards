@@ -36,8 +36,8 @@ extension APIDeckBuilder: APIBase {
             return "\(deckId)/shuffle/"
         case .brandNewDeck:
             return "new/"
-        case .partialDeck(let cards):
-            return "new/shuffle/?cards=\(cards)"
+        case .partialDeck:
+            return "new/shuffle/"
         case .addingToPiles(let deckId, let pileName):
             return "\(deckId)/pile/\(pileName)/add/?cards=AS,2S"
         case .shufflePiles(let deckId, let pileName):
@@ -72,7 +72,7 @@ extension APIDeckBuilder: APIBase {
         case .reshuffleTheCards(let deckId):
             return .requestParameters(bodyParameters: [:], urlParameters: ["deck_id": deckId])
         case .partialDeck(let cards):
-            return .requestParameters(bodyParameters: [:], urlParameters: ["cards": cards])
+            return .requestParameters(urlParameters: ["cards": cards])
         case .addingToPiles(let deckId, let pileName):
             return .requestParameters(bodyParameters: [:], urlParameters: ["deck_id": deckId, "pile_name": pileName])
         case .shufflePiles(let deckId, let pileName):

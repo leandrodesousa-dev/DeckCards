@@ -27,6 +27,7 @@ class DeckInfoViewController: UIViewController {
         tableView.register(UINib(nibName: "CombinationsViewCell", bundle: nil), forCellReuseIdentifier: "CombinationsViewCell")
         
         //viewModel.drawACard()
+        print("Deck Id Info: ", viewModel.getDeckId())
     }
     
     init(_ viewModel: DeckInfoViewModel) {

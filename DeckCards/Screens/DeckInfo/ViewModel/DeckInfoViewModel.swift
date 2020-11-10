@@ -16,4 +16,8 @@ class DeckInfoViewModel {
     init(_ deckId: String) {
         self.deckId = deckId
     }
+    
+    func getDeckId() -> String {
+        deckId
+    }
 }

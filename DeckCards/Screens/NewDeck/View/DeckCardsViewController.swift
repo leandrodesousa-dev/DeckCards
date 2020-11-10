@@ -97,7 +97,10 @@ extension DeckCardsViewController: UITableViewDataSource {
             as? SubmitFooterView else { return UIView() }
         
         footerView.onActionSubmitButton = {
-            self.viewModel.goToCardInfoScreen()
+            self.startIndicator(false)
+            DispatchQueue.main.async {
+            self.viewModel.aPartialDeck()
+            }
         }
         
         footerView.onActionShuffleButton = {
@@ -130,6 +133,14 @@ extension DeckCardsViewController: UITableViewDataSource {
 
 //MARK: - DeckCardsViewModelViewDelegate
 extension DeckCardsViewController: DeckCardsViewModelViewDelegate {
+    func cardsPartialSuccess(_ viewModel: DeckCardsViewModel, deckId: String) {
+        print("Success")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.startIndicator(true)
+            viewModel.goToCardInfoScreen(deckId: deckId)
+        }
+    }
+    
     func cardsSuccess(_ viewModel: DeckCardsViewModel) {
         print("Success")
         startIndicator(true)
