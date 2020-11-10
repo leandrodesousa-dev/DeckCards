@@ -10,32 +10,53 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubmitFooterView" customModule="DeckCards" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SubmitFooterView" customModule="DeckCards" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8E-6Y-cWD">
-                    <rect key="frame" x="16" y="0.0" width="382" height="50"/>
-                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="mud-dv-hHk"/>
-                    </constraints>
-                    <state key="normal" title="Submit"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <integer key="value" value="24"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="submitButton:" destination="-1" eventType="touchUpInside" id="y6H-9e-NF8"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-Uf-tis">
+                    <rect key="frame" x="16" y="0.0" width="382" height="116"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQV-8D-ap1">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="FWi-7r-4Bh"/>
+                            </constraints>
+                            <state key="normal" title="Shuffle"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="shuffleButton:" destination="-1" eventType="touchUpInside" id="L0b-uR-64k"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8E-6Y-cWD">
+                            <rect key="frame" x="0.0" y="66" width="382" height="50"/>
+                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="mud-dv-hHk"/>
+                            </constraints>
+                            <state key="normal" title="Submit"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="submitButton:" destination="-1" eventType="touchUpInside" id="y6H-9e-NF8"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="s8E-6Y-cWD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="9pE-2m-Fkc"/>
-                <constraint firstAttribute="bottom" secondItem="s8E-6Y-cWD" secondAttribute="bottom" id="LAy-fx-S4s"/>
-                <constraint firstItem="s8E-6Y-cWD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Tfe-zj-W79"/>
-                <constraint firstAttribute="trailing" secondItem="s8E-6Y-cWD" secondAttribute="trailing" constant="16" id="ynn-hj-Grs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FTe-Uf-tis" secondAttribute="bottom" id="8E8-1x-2fr"/>
+                <constraint firstItem="FTe-Uf-tis" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="ax2-R4-O7W"/>
+                <constraint firstAttribute="trailing" secondItem="FTe-Uf-tis" secondAttribute="trailing" constant="16" id="oPg-ty-spH"/>
+                <constraint firstItem="FTe-Uf-tis" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zDQ-OA-MoW"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -12,6 +12,7 @@ class DeckCardsViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: DeckCardsViewModel!
+    var isForShuffle = false
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -47,11 +48,12 @@ class DeckCardsViewController: UIViewController {
         tableView.register(UINib(nibName: "RotationCardViewCell", bundle: nil), forCellReuseIdentifier: "RotationCardViewCell")
         tableView.register(UINib(nibName: "SubmitFooterView", bundle: nil),
                            forHeaderFooterViewReuseIdentifier: "SubmitFooterView")
+        
     }
     
     private func setupAlertView() {
         let alert = UIAlertController(title: "Bem vindo!!",
-                                      message: "Escolha uma mão com cinco cartas e uma carta de rotação",
+                                      message: "Essas são as suas cartas e uma carta de rotação",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -84,7 +86,7 @@ extension DeckCardsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        50
+        116
     }
 }
 
@@ -94,8 +96,16 @@ extension DeckCardsViewController: UITableViewDataSource {
         guard let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SubmitFooterView")
             as? SubmitFooterView else { return UIView() }
         
-        footerView.onActionButton = {
+        footerView.onActionSubmitButton = {
             self.viewModel.goToCardInfoScreen()
+        }
+        
+        footerView.onActionShuffleButton = {
+            self.startIndicator(false)
+            self.isForShuffle = true
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.viewModel.fetchDeckCards()
+            }
         }
         
         return footerView
@@ -126,7 +136,9 @@ extension DeckCardsViewController: DeckCardsViewModelViewDelegate {
         DispatchQueue.main.async {
             self.setupTableView()
             self.tableView.reloadData()
-            self.setupAlertView()
+            if !self.isForShuffle {
+                self.setupAlertView()
+            }
         }
     }
     

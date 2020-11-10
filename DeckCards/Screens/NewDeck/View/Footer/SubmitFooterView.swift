@@ -11,9 +11,14 @@ import UIKit
 
 class SubmitFooterView: UITableViewHeaderFooterView {
     
-    var onActionButton: (() -> Void)?
+    var onActionSubmitButton: (() -> Void)?
+    var onActionShuffleButton: (() -> Void)?
     
     @IBAction func submitButton(_ sender: Any) {
-        onActionButton?()
+        onActionSubmitButton?()
+    }
+    
+    @IBAction func shuffleButton(_ sender: Any) {
+        onActionShuffleButton?()
     }
 }
