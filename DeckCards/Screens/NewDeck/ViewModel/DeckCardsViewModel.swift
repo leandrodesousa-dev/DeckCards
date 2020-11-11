@@ -52,6 +52,17 @@ class DeckCardsViewModel {
         cards.count == index + 1
     }
     
+    func getCodeCards() -> String {
+        var codesCards: [String] = []
+        guard let cards = model.cards else { return ""}
+        for index in 0..<5 {
+            codesCards.append(cards[index].code)
+        }
+        codesCards.append(cards[10].code)
+        
+        return codesCards.joined(separator: ",")
+    }
+    
     // MARK: - Service Methods
     func shuffleTheCards(_ dispatchSemaphore: DispatchSemaphore) {
         dispatchSemaphore.wait()
@@ -81,7 +92,7 @@ class DeckCardsViewModel {
     }
     
     func aPartialDeck() {
-        service.aPartialDeck(cards: "AS,2S,KS,AD,2D,KD,AC,2C,KC,AH,2H,KH") { (result) in
+        service.aPartialDeck(cards: getCodeCards()) { (result) in
             switch result {
             case .success(let model):
                 self.viewDelegate?.cardsPartialSuccess(self, deckId: model.deck_id)
