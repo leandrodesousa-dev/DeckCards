@@ -10,13 +10,17 @@ import Foundation
 import UIKit
 
 class DeckCardsCoordinator: BaseCoordinator {
+    
+    // MARK: - Heritage Properties
     typealias View = DeckCardsViewController
     var view: View?
     var navigation: UINavigationController?
     var presentationType: PresentationType?
     
+    // MARK: - Child Coordinator
     var deckInfoCoordinator: DeckInfoCoordinator?
     
+    // MARK: - Heritage Methods
     func start() -> UINavigationController {
         let viewModel = DeckCardsViewModel()
         viewModel.coordinatorDelegate = self
@@ -38,6 +42,7 @@ class DeckCardsCoordinator: BaseCoordinator {
     }
 }
 
+// MARK: - DeckCardsViewModelCoordinatorDelegate
 extension DeckCardsCoordinator: DeckCardsViewModelCoordinatorDelegate {
     func goToCardInfoScreen(_ viewModel: DeckCardsViewModel, deckId: String) {
         guard let navigation = navigation else { return }

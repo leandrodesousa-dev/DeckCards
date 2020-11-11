@@ -10,6 +10,7 @@ import UIKit
 
 class CardsOrderViewCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet weak var cardsStackView: UIStackView!
     
     // MARK: - Methods
@@ -18,10 +19,12 @@ class CardsOrderViewCell: UITableViewCell {
         cardsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
     }
     
-    func addCards() {
-//        cardsStackView.addArrangedSubview(CardsView(frame: CardsViewCell().frame,
-//                                               firstImage: UIImage(named: "card")!,
-//                                               lastImage: UIImage(named: "card")!))
+    func addCards(_ firstImageName: String, _ lastImageName: String?) {
+        let cardView = CardsView()
+        cardView.setup(frame: CardsOrderViewCell().frame,
+                       firstImageName: firstImageName,
+                       lastImageName: lastImageName)
+        cardsStackView.addArrangedSubview(cardView)
         self.layoutIfNeeded()
     }
 }

@@ -276,13 +276,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D1344DBD2553A52500B00C7E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D1344DBE2553A52D00B00C7E /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,7 +325,6 @@
 			isa = PBXGroup;
 			children = (
 				D1344DBE2553A52D00B00C7E /* Coordinator */,
-				D1344DBD2553A52500B00C7E /* Model */,
 				D1344DBC2553A51800B00C7E /* View */,
 				D1344DBB2553A4FF00B00C7E /* ViewModel */,
 			);

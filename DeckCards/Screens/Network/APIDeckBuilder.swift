@@ -8,9 +8,10 @@
 
 import Foundation
 
+// MARK: - APIDeckBuilder
 enum APIDeckBuilder {
     case suffleTheCards
-    case drawACard(deckId: String)
+    case drawACard(deckId: String, count: Int)
     case reshuffleTheCards(deckId: String)
     case brandNewDeck
     case partialDeck(cards: String)
@@ -21,16 +22,18 @@ enum APIDeckBuilder {
 }
 
 extension APIDeckBuilder: APIBase {
+    // MARK: - BaseUrl
     var baseURL: URL {
         guard let url = URL(string: "https://deckofcardsapi.com/api/deck/") else { fatalError("baseURL could not be configured.")}
         return url
     }
     
+    // MARK: - Path
     var path: String {
         switch self {
         case .suffleTheCards:
             return "new/shuffle/"
-        case .drawACard(let deckId):
+        case .drawACard(let deckId, _):
             return "\(deckId)/draw/"
         case .reshuffleTheCards(let deckId):
             return "\(deckId)/shuffle/"
@@ -55,6 +58,7 @@ extension APIDeckBuilder: APIBase {
         return ""
     }
     
+    // MARK: - HTTPMethod
     var httpMethod: HTTPMethod {
         switch self {
         case .suffleTheCards, .brandNewDeck, .drawACard, .reshuffleTheCards, .partialDeck, .addingToPiles, .shufflePiles,
@@ -63,12 +67,13 @@ extension APIDeckBuilder: APIBase {
         }
     }
     
+    // MARK: - HTTPTask
     var task: HTTPTask {
         switch self {
         case .suffleTheCards, .brandNewDeck:
             return .requestParameters(urlParameters: ["deck_count": 1])
-        case .drawACard:
-            return .requestParameters(urlParameters: ["count": 11])
+        case .drawACard(_, let count):
+            return .requestParameters(urlParameters: ["count": count])
         case .reshuffleTheCards(let deckId):
             return .requestParameters(bodyParameters: [:], urlParameters: ["deck_id": deckId])
         case .partialDeck(let cards):
@@ -85,6 +90,7 @@ extension APIDeckBuilder: APIBase {
         }
     }
     
+    // MARK: - HTTPHeaders
     var headers: HTTPHeaders? {
         return ["Content-type": "application/json"]
     }

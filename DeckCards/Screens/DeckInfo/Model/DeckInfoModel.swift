@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - CardDetailsType
 struct CardDetailsType {
     var image: String
     var value: String
@@ -15,15 +16,16 @@ struct CardDetailsType {
     var cardOrder: Int
 }
 
-enum NaipesDeckModel: String {
+// MARK: - SuitsDeckModel
+enum SuitsDeckModel: String {
     case heart = "HEARTS"
     case diamond = "DIAMONDS"
     case club = "CLUBS"
     case spades = "SPADES"
 }
 
-extension NaipesDeckModel {
-    func convertValue(highestValueSuit suit: NaipesDeckModel) -> Int {
+extension SuitsDeckModel {
+    func convertValue(highestValueSuit suit: SuitsDeckModel) -> Int {
         switch self {
         case .heart:
             switch suit {
@@ -73,6 +75,7 @@ extension NaipesDeckModel {
     }
 }
 
+// MARK: - ValuesDeckModel
 enum ValuesDeckModel: String {
     case two = "2"
     case ace = "ACE"

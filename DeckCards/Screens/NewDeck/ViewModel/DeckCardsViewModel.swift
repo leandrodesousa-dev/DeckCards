@@ -31,10 +31,8 @@ class DeckCardsViewModel {
     
     // MARK: - Initializers
     init() {
-        let service = DeckService()
-        let model = DeckModel(success: false, deck_id: "", remaining: 0, shuffled: nil, cards: nil, piles: nil)
-        self.model = model
-        self.service = service
+        self.model = DeckModel(success: false, deck_id: "", remaining: 0, shuffled: nil, cards: nil, piles: nil)
+        self.service = DeckService()
     }
     
     // MARK: - Computer Variables Methods
@@ -79,7 +77,7 @@ class DeckCardsViewModel {
     
     func drawACard(_ dispatchSemaphore: DispatchSemaphore) {
         dispatchSemaphore.wait()
-        service.drawCards(deckId: model.deck_id) { (result) in
+        service.drawCards(deckId: model.deck_id, count: 11) { (result) in
             switch result {
             case .success(let model):
                 self.model = model

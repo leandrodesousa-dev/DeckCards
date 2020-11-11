@@ -10,11 +10,15 @@ import UIKit
 
 class CombinationsViewCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet var cardsImageView: [UIImageView]!
     
-    func setup() {
+    // MARK: - Methods
+    func setup(_ images: [String]) {
         cardsImageView.forEach { (image) in
-            image.image = UIImage(named: "card")
+            images.forEach { (imageCard) in
+                image.sd_setImage(with: URL(string: imageCard))
+            }
         }
     }
 }

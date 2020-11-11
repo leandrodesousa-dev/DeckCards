@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HighestValueViewCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet weak var cardImageView: UIImageView!
     
-    func setup() {
-        cardImageView.image = UIImage(named: "card")
+    // MARK: - Methods
+    func setup(_ image: String?) {
+        cardImageView.sd_setImage(with: URL(string: image ?? ""))
         cardImageView.contentMode = .top
     }
 }

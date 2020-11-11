@@ -10,16 +10,21 @@ import Foundation
 import UIKit
 
 class DeckInfoCoordinator: BaseCoordinator {
+    
+    // MARK: - Heritage Properties
     typealias View = DeckInfoViewController
     var view: View?
     var navigation: UINavigationController?
     var presentationType: PresentationType?
     
+    // MARK: - Initializers
     init(_ deckId: String) {
-        let view = DeckInfoViewController(.init(deckId))
+        let viewModel = DeckInfoViewModel(deckId)
+        let view = DeckInfoViewController(viewModel)
         self.view = view
     }
     
+    // MARK: - Heritage Methods
     func stop() {
         view = nil
         navigation = nil

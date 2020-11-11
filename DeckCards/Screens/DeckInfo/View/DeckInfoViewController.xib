@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeckInfoViewController" customModule="DeckCards" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="RHA-gS-DyK" id="eVQ-fR-vjR"/>
+                <outlet property="backgroundView" destination="cyE-Nf-dUr" id="sm6-fv-4bg"/>
                 <outlet property="tableView" destination="LN2-q8-3pj" id="Sxo-rB-MKl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,17 +20,38 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LN2-q8-3pj">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LN2-q8-3pj">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyE-Nf-dUr">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="RHA-gS-DyK">
+                            <rect key="frame" x="187" y="389" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="exu-1s-ZcQ"/>
+                                <constraint firstAttribute="height" constant="40" id="zLE-qT-wyE"/>
+                            </constraints>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="RHA-gS-DyK" firstAttribute="centerY" secondItem="cyE-Nf-dUr" secondAttribute="centerY" id="TMt-W1-Bvx"/>
+                        <constraint firstItem="RHA-gS-DyK" firstAttribute="centerX" secondItem="cyE-Nf-dUr" secondAttribute="centerX" id="yVV-yj-0DI"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="cyE-Nf-dUr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2wS-He-v9t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cyE-Nf-dUr" secondAttribute="trailing" id="AgF-3D-G54"/>
                 <constraint firstAttribute="trailing" secondItem="LN2-q8-3pj" secondAttribute="trailing" id="Lgp-me-UUo"/>
                 <constraint firstItem="LN2-q8-3pj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N4E-hY-H9X"/>
                 <constraint firstItem="LN2-q8-3pj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="b3r-2z-Fh9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cyE-Nf-dUr" secondAttribute="bottom" id="sCj-u6-dAb"/>
                 <constraint firstAttribute="bottom" secondItem="LN2-q8-3pj" secondAttribute="bottom" id="waN-m5-p1f"/>
+                <constraint firstItem="cyE-Nf-dUr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zBL-rE-H4a"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="153"/>
