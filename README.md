@@ -7,7 +7,9 @@
 
 ## Instalação
 
-Testando
+* O clone deve ser feito na branch master do projeto. 
+* Foi usado o Carthage para o gerenciamento dos frameworks usados.
+* Para usar o projeto você deve ter o Carthage instalado, e dar o comando no projeto **carthage update --platform iOS**
 
 ## Requisitos
 
